@@ -1,14 +1,16 @@
-import { Provider } from 'react-redux';
-import Counter from './Components/counter';
-import store from './store';
+import { NavLink, Route, Routes } from "react-router-dom";
+import Users from "./pages/Posts";
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Counter />
-      </div>
-    </Provider>
+    <div>
+      <nav>
+        <NavLink to="/users">Users</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/users" element={<Users />} />
+      </Routes>
+    </div>
   );
 }
 
