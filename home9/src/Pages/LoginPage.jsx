@@ -1,34 +1,38 @@
+import { useState } from "react";
+import "./Login.css";
 
+const LoginPage = ({ onLogin }) => {
+  const [username, setUsername] = useState("");
 
-import {  useState } from 'react';
-import { useHistory } from 'react-router-dom';
-
-const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const history = useHistory();
-
-  const handleLogin = () => {
-    
-    console.log('Logged in as:', username);
-
-    
-    history.push('/home');
+  const handleLogin = (event) => {
+    event.preventDefault();
+    onLogin(username);
+    console.log("Logged in as:", username);
   };
 
   return (
     <div>
-      <h2>Login Page</h2>
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
+      <header>
+        <h1>PIZZA DAY</h1>
+        <input type="search" className="search-input" placeholder="Search..." />
+      </header>
+      <main>
+        <h2>The Best Pizza</h2>
+        <h1 className="text">Straight out of the oven, straight to you</h1>
+        <h4>Welcome! Please start by telling us your name:</h4>
+
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            id="username"
+            placeholder="Your full name"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </form>
+      </main>
     </div>
   );
 };
 
 export default LoginPage;
-

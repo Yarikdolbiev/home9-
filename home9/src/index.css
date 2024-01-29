@@ -1,23 +1,26 @@
-.loginPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .label {
-    margin-bottom: 10px;
-  }
-  
-  .input {
-    padding: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .button {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #daa520;
+}
+
+.search-input {
+  margin-left: auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  color: yellow;
+}
+
+main {
+  text-align: center;
+}
+
+form {
+  margin-top: 30px;
+}
+
+h1.text {
+  color: yellow;
+}

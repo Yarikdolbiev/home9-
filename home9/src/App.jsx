@@ -1,25 +1,17 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import { UserProvider } from "./Pages/UserContext";
-
-const Home = () => {
-  return (
-    <div>
-      <h2>Welcome to the Home Page</h2>
-    </div>
-  );
-};
 
 const App = () => {
+  const handleLogin = (username) => {
+    console.log("Handling login for user:", username);
+  };
   return (
-    <UserProvider>
-      <Router>
-        <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/" component={LoginPage} />
-        </Switch>
-      </Router>
-    </UserProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
 };
 
