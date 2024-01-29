@@ -1,17 +1,26 @@
-import { NavLink, Route, Routes } from "react-router-dom";
-import Users from "./pages/Posts";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import { UserProvider } from "./Pages/UserContext";
 
-function App() {
+const Home = () => {
   return (
     <div>
-      <nav>
-        <NavLink to="/users">Users</NavLink>
-      </nav>
-      <Routes>
-        <Route path="/users" element={<Users />} />
-      </Routes>
+      <h2>Welcome to the Home Page</h2>
     </div>
   );
-}
+};
+
+const App = () => {
+  return (
+    <UserProvider>
+      <Router>
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/" component={LoginPage} />
+        </Switch>
+      </Router>
+    </UserProvider>
+  );
+};
 
 export default App;
