@@ -2,13 +2,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2px;
+    padding: 10px;
     background-color: #daa520;
   }
   
   .search-input {
     margin-left: auto;
-    padding: 2px;
+    padding: 8px;
     border: 1px solid #ccc;
     color: yellow;
   }
