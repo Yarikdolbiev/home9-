@@ -14,16 +14,7 @@ const Menu = () => {
     dispatch(fetchMenuData());
   }, [dispatch]);
 
-//   const handleAddToCart = (item) => {
-//     console.log('Adding to cart:', item); 
-//     dispatch(addItem({ item }));
-//   };
 
-  // useEffect(() => {
-  //   console.log("Status:", status);
-  //   console.log("Error:", error);
-  //   console.log("Data:", menuData);
-  // }, [status, menuData, error]);
 
   return (
     <div>
