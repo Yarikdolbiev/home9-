@@ -1,25 +1,30 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchMenuData = createAsyncThunk("menu/fetchMenuData", async () => {
-  try {
-    const response = await fetch("https://react-fast-pizza-api.onrender.com/api/menu");
-    if (!response.ok) {
-      throw new Error("Ошибка");
-    }
+export const fetchMenuData = createAsyncThunk(
+  "menu/fetchMenuData",
+  async () => {
+    try {
+      const response = await fetch(
+        "https://react-fast-pizza-api.onrender.com/api/menu"
+      );
+      if (!response.ok) {
+        throw new Error("Ошибка");
+      }
 
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw new Error(error.message);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(error.message);
+    }
   }
-});
+);
 
 const menuSlice = createSlice({
   name: "menu",
   initialState: {
     menuData: [],
     error: null,
-    status: "idle", 
+    status: "idle",
   },
   reducers: {
     fetchSuccess: (state, action) => {
