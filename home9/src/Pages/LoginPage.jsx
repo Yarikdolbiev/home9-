@@ -7,7 +7,7 @@ const LoginPage = ({ onLogin }) => {
   const handleLogin = (event) => {
     event.preventDefault();
     onLogin(username);
-    console.log("Logged in as:", username);123123
+    console.log("Logged in as:", username);
   };
 
   return (
